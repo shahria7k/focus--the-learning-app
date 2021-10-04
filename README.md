@@ -6,7 +6,7 @@ A multi page application build with react js an react router
 
 This project is built as an assignment project for Programming Hero Course.
 
-### To See the deployment: [Netlify Deployment](https://epic-heyrovsky-22dae8.netlify.app/) 🌐
+### To See the deployment: [Netlify Deployment](https://brave-bartik-c4ad0e.netlify.app/) 🌐
 
 ## Task
 
