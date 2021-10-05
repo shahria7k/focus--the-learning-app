@@ -2,12 +2,16 @@ import logo from "../../images/education.png";
 import { Navbar, Container, NavDropdown, Nav } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import './Header.css';
+import { useContext } from "react";
+import { AuthContext } from "../../App";
+
+
 const Header = () => {
+    const { isLoggedIn, handleLogIn } = useContext(AuthContext);
     return (
         <header>
             <Navbar collapseOnSelect expand="lg" bg="white" variant="light">
                 <Container className="py-lg-2">
-
                     <Navbar.Brand>
                         <NavLink to='/home' className='nav-link text-black'>
                             <img
@@ -32,13 +36,18 @@ const Header = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Dashboard</Nav.Link>
+                            <NavLink to="/dashboard" className='nav-link'>Dashboard</NavLink>
                             <NavDropdown title="Account" id="collasible-nav-dropdown" menuVariant="light">
-                                <NavDropdown.Item href="#action/3.1">Front End Development</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                {/* <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.2">Settings</NavDropdown.Item>
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item> */}
+                                {isLoggedIn ? (<><NavLink to='/home' className='nav-link'>Home</NavLink>
+                                    <NavLink to='/about' className='nav-link'>About</NavLink>
+                                    <NavLink to='/features' className='nav-link'>Features</NavLink></>) : () => { }}
                                 <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4" disabled>Logout</NavDropdown.Item>
+                                <NavLink to='/features' className='nav-link'>Features</NavLink>
+                                <NavLink to={isLoggedIn ? "/home" : "/login"} className='nav-link' onClick={isLoggedIn ? () => handleLogIn(false) : () => { handleLogIn(true); }}>{isLoggedIn ? 'Logout' : 'Login'}</NavLink>
+                                {/* <NavDropdown.Item href="#action/3.4" onClick={() => handleLogIn(false)}>Logout</NavDropdown.Item> */}
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

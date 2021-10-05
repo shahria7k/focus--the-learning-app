@@ -15,7 +15,7 @@ const Courses = (props) => {
             </div>
             <div className="container">
                 <Row xs={1} md={2} lg={3} className="g-5 mt-3">
-                    {props.count > 0 ? courses.slice(0, props.count).map((course) => <Course course={course} key={course.key}></Course>) : courses.map((course) => <Course key={course.key} course={course}></Course>)}
+                    {props.count > 0 ? courses.slice(0, props.count).map((course, index) => <Course course={course} key={course.key}></Course>) : courses.map((course, index) => <Course key={index} course={course}></Course>)}
                 </Row>
             </div>
         </section>

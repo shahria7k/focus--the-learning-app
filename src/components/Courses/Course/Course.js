@@ -13,7 +13,6 @@ const Course = (props) => {
                         <Col><b>By: </b><Card.Title> {course.tutor}</Card.Title></Col>
                         <Col className="text-end"><Card.Title>⭐ {course.rating}/5{`(${parseInt(Math.random() * (100 - 1) + 1)})`}</Card.Title></Col>
                     </Row>
-
                     <Card.Text>
                         This is a longer card with supporting text below as a natural
                         lead-in to additional content. This content is a little bit longer.
