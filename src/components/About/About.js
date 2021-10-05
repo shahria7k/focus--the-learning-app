@@ -14,9 +14,7 @@ const About = () => {
                             Goals <br /> With Focus</h4>
                         <hr />
                         <div className="text-start  mt-3  pe-5 me-5">
-
                             <p >Lost the plot bobby such a fibber bleeding bits and bobs don't get shirty with me bugger all mate chinwag super pukka william barney, horse play buggered.</p>
-
                             <p>✔ Upskill your organization.</p>
                             <p>✔ Access more then 100K online courses.</p>
                             <p>✔ Learn the latest skills</p>

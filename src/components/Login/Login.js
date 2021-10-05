@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import loginImg from '../../images/login-pana.png';
-import { Form, Button } from "react-bootstrap";
-import { useParams } from 'react-router';
+import { Form } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../App';
 // const nextRoute= useParams()
 const Login = () => {
+    const { handleLogIn } = useContext(AuthContext);
     return (
         <div className="container">
             <div className="row">
@@ -27,9 +29,7 @@ const Login = () => {
                         <Form.Group className="mb-3" controlId="formBasicCheckbox">
                             <Form.Check type="checkbox" label="Remember me" />
                         </Form.Group>
-                        <Button variant="primary" type="submit">
-                            Login
-                        </Button>
+                        <Link to="/dashboard" className="btn btn-primary" onClick={() => handleLogIn(true)}>Login</Link>
                     </Form>
                 </div>
             </div>
