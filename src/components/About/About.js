@@ -1,5 +1,6 @@
 import React from 'react';
 import "./About.css";
+
 const About = () => {
     return (
         <div>
@@ -26,6 +27,7 @@ const About = () => {
 
                 </div>
             </div>
+
         </div>
     );
 };

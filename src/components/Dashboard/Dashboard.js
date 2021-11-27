@@ -1,18 +1,9 @@
-import React, { useContext } from 'react';
 import { Table } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import { AuthContext } from '../../App';
 import dashboard from "../../images/dashboard.png";
 
 const Dashboard = () => {
-    const { isLoggedIn } = useContext(AuthContext);
-    // console.log(isLoggedIn);
-    const history = useHistory();
-    function routeToLogin() {
-        history.push('/login/toDashboard');
-    }
     return (
-        <div className='container' onLoad={isLoggedIn ? () => { } : routeToLogin()}>
+        <div className='container'>
             <div className="row">
                 <div className="col-lg-6"><img src={dashboard} alt="" className="img-fluid" /></div>
                 <div className="col-lg-6 pt-lg-5">

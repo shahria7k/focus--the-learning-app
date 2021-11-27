@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './App.css';
 import Header from './components/Header/Header';
 import {
@@ -14,19 +15,21 @@ import Footer from './components/Footer/Footer';
 import SingleCourse from './components/SingleCourse/SingleCourse';
 import { createContext, useState } from 'react';
 import Dashboard from './components/Dashboard/Dashboard';
-import Login from './components/Login/Login';
+import LoginWithPhone from './components/Login/LoginWithPhone';
+import Register from './components/Login/Register';
+
 
 
 export const AuthContext = createContext();
+// eslint-disable-next-line no-unused-vars
 
+// const analytics = getAnalytics(firebaseApp);
 function App() {
 
   const [isLoggedIn, setLoggedIn] = useState(false);
-  async function handleLogIn(status) {
-    setLoggedIn(status);
-  }
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, handleLogIn }}>
+    <AuthContext.Provider value={{ isLoggedIn, setLoggedIn }}>
       <div className="App">
         <Router>
           <Header></Header>
@@ -49,12 +52,13 @@ function App() {
             <Route exact path='/dashboard'>
               <Dashboard></Dashboard>
             </Route>
-            <Route exact path="/login">
-              <Login></Login>
+            <Route exact path="/register">
+              <Register></Register>
             </Route>
-            <Route exact path="/login/:nextRoute">
-              <Login></Login>
+            <Route exact path="/loginWithPhone">
+              <LoginWithPhone></LoginWithPhone>
             </Route>
+
             <Route exact path='/courses/:courseID'>
               <SingleCourse></SingleCourse>
             </Route>
